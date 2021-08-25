@@ -41,12 +41,11 @@ export default function List() {
                 {pressed? 
                 <View>
                     <Text style={styles.Text}>Capital city: {item.capital}</Text>
-                    <Text>{weather}</Text>
+                    <Text>Temperature :{weather}</Text>
                 </View>
                 : null }
             </View>
            }
-           console.log(selectedCapital);
     return(
         <View>
             <FlatList
@@ -55,14 +54,6 @@ export default function List() {
                 renderItem={renderCountries}
                 keyExtractor={(item, index) => index} />
         </View>
-        // <View>
-        //     <FlatList
-        // style={styles.list}
-        // data={weather}
-        // renderItem={getWeather}
-        // keyExtractor={(item, index) => index} />
-        // </View>
-        
     )
 }
     const styles = StyleSheet.create({
