@@ -1,11 +1,16 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, ActivityIndicator, Alert, Pressable } from 'react-native';
 import img from './assets/konexio-logo_1.png'
 
 export default function App() {
+  const [showLoading, setShowLoading]= useState(true);
+
   const onPressFunction = ()=> {
     console.log("pressed")
+    setShowLoading(current => !current)
+    console.log(showLoading)
     Alert.alert("you have pressed the button");
+
   }
   return (
     <ScrollView style={styles.container}>
@@ -20,7 +25,7 @@ export default function App() {
       <Pressable onPress={onPressFunction} style={styles.button}>
         <Text style={styles.buttonText}> Pressable!</Text>
       </Pressable>
-      <ActivityIndicator />
+      <ActivityIndicator size= 'large'/>
     </ScrollView>
   );
 }
